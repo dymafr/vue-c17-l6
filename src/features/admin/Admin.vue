@@ -10,6 +10,7 @@ import ProductForm from './components/ProductForm.vue';
       flex-row
       justify-content-center
       align-items-center
+      p-20
     "
   >
     <ProductForm />
