@@ -127,7 +127,7 @@ header {
   }
 
   .menu {
-    z-index: 1;
+    z-index: 2;
     position: absolute;
     top: 20px;
     right: 0px;
