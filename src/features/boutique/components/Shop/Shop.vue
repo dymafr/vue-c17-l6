@@ -7,6 +7,7 @@ import type {
 import ShopProductList from './ShopProductList.vue';
 import ShopFilters from './ShopFilters.vue';
 import { reactive } from 'vue';
+import Calc from '../../../../components/Calc.vue';
 
 const state = reactive<{
   open: boolean;

@@ -2,6 +2,7 @@
 import type { ProductCartInterface } from '@/interfaces';
 import { computed, reactive } from 'vue';
 import CartProductList from './CartProductList.vue';
+import Calc from '../../../../components/Calc.vue';
 
 const state = reactive<{
   open: boolean;
@@ -42,9 +43,11 @@ const emit = defineEmits<{
         <i class="fa-solid fa-basket-shopping"></i>
       </div>
       <div v-else>
-        <Teleport to="body">
-          <div @click="state.open = false" class="calc"></div>
-        </Teleport>
+        <Calc
+          :open="state.open"
+          @close="state.open = false"
+          :transparent="true"
+        />
         <div class="p-20 d-flex flex-column card ml-20">
           <h2 class="mb-10">Panier</h2>
           <CartProductList
@@ -79,16 +82,6 @@ const emit = defineEmits<{
   top: 0px;
   right: 0px;
   color: var(--text-primary-color);
-}
-
-.calc {
-  position: fixed;
-  top: 0px;
-  left: 0px;
-  height: 100vh;
-  width: 100%;
-  background-color: #0000005e;
-  z-index: 1;
 }
 
 .cart-holder {
