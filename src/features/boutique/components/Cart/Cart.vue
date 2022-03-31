@@ -43,11 +43,7 @@ const emit = defineEmits<{
         <i class="fa-solid fa-basket-shopping"></i>
       </div>
       <div v-else>
-        <Calc
-          :open="state.open"
-          @close="state.open = false"
-          :transparent="false"
-        />
+        <Calc :open="state.open" @close="state.open = false" />
         <div class="p-20 d-flex flex-column card ml-20">
           <h2 class="mb-10">Panier</h2>
           <CartProductList
