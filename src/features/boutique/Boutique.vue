@@ -1,7 +1,15 @@
 <script setup lang="ts">
 import Shop from './components/Shop/Shop.vue';
 import Cart from './components/Cart/Cart.vue';
-import { computed, reactive, watchEffect, watch, provide, toRef } from 'vue';
+import {
+  computed,
+  reactive,
+  watchEffect,
+  watch,
+  provide,
+  toRef,
+  toRefs,
+} from 'vue';
 import type {
   FiltersInterface,
   ProductCartInterface,
@@ -30,7 +38,7 @@ const state = reactive<{
 
 provide(pageKey, toRef(state, 'page'));
 
-watch(state.filters, () => {
+watch([() => state.filters.priceRange, () => state.filters.category], () => {
   state.page = 1;
   state.products = [];
 });
