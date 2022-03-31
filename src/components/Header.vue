@@ -52,6 +52,11 @@ const emit = defineEmits<{
         </li>
       </ul>
       <div class="menu-xs-container">
+        <Calc
+          :open="state.open"
+          @close="state.open = false"
+          :transparent="true"
+        />
         <i
           @click="state.open = !state.open"
           class="fa-solid fa-bars show-xs"
