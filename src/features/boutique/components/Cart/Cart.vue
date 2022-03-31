@@ -46,7 +46,7 @@ const emit = defineEmits<{
         <Calc
           :open="state.open"
           @close="state.open = false"
-          :transparent="true"
+          :transparent="false"
         />
         <div class="p-20 d-flex flex-column card ml-20">
           <h2 class="mb-10">Panier</h2>
